@@ -1,0 +1,43 @@
+.parent {
+    @apply flex justify-center h-[90vh] items-center
+}
+.child {
+    @apply flex justify-center items-center w-1/2
+}
+.card {
+    @apply  w-[90%] grid grid-cols-2 gap-6  
+}
+.card >div {
+    @apply relative
+}
+.icons {
+    @apply w-16 h-16 ml-5 -top-5 flex justify-center items-center bg-slate-400 rounded-xl absolute  z-20 border-2 border-slate-400
+}
+.texs {
+    @apply relative  pl-5 pt-16 h-40 bg-slate-100 hover:bg-slate-300 shadow-2xl  rounded-lg border-2 border-slate-400
+}
+.texs:hover .icons{
+    @apply bg-white
+}
+.texs >h1{
+    @apply font-bold text-lg text-start -mt-14
+}
+.texs >p {
+    @apply italic text-start
+}
+
+.children {
+    @apply w-1/2
+}
+.children >div {
+    @apply flex justify-center items-center
+}
+.chardleft {
+    @apply w-[80%] h-[50vh]
+}
+.chardleft >img{
+    @apply w-auto h-[50vh] rounded-xl hover:shadow-2xl shadow-black 
+}
+.chardleft >h1{
+    @apply italic pt-5
+}
