@@ -1,19 +1,8 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Dashboard from '../Pages/Dashboard'
-// import Login from '@/Pages/Login'
-// const Dashboard = React.lazy(() => import('@/Pages/Dashboard'))
-
-// const router: Route[] = [
-//   {
-//     path: '',
-//     component: <Dashboard />,
-//   },
-//   // {
-//   //   path: '',
-//   //   component:
-//   // }
-// ]
+import Food from '../Pages/Makanan'
+import Drink from '../Pages/Minuman'
 
 const routes = createBrowserRouter([
   {
@@ -21,8 +10,12 @@ const routes = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: '/login',
-    // element: <Login />,
+    path: '/food',
+    element: <Food />,
+  },
+  {
+    path: '/drink',
+    element: <Drink />,
   },
 ])
 

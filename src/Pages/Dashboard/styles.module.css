@@ -2,10 +2,10 @@
     @apply flex justify-center h-[90vh] items-center
 }
 .child {
-    @apply flex justify-center items-center w-1/2
+    @apply flex justify-center items-center w-1/2 
 }
 .card {
-    @apply  w-[90%] grid grid-cols-2 gap-6  
+    @apply  w-[90%]  grid grid-cols-2 gap-6  
 }
 .card >div {
     @apply relative
@@ -33,7 +33,7 @@
     @apply flex justify-center items-center
 }
 .chardleft {
-    @apply w-[80%] h-[50vh]
+    @apply w-[90%] h-[60vh]
 }
 .chardleft >img{
     @apply w-auto h-[50vh] rounded-xl hover:shadow-2xl shadow-black 

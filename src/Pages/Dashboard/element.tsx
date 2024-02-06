@@ -1,56 +1,26 @@
 import React, { ReactNode } from 'react'
-import { MdOutlineFastfood, MdOutlineFoodBank } from 'react-icons/md'
-import { FaBowlFood } from 'react-icons/fa6'
-import { BiFoodMenu } from 'react-icons/bi'
+
 import SliderComponent from '../../Component/Slider'
 import styles from './styles.module.css'
 import { FaHandPointRight, FaHandPointLeft } from 'react-icons/fa'
-// import { NextArrowProps } from 'slick-carousel'
+import { dataCard, dataSlider, dataMenuSpecial } from './data'
+import { useNavigate } from 'react-router-dom'
 
 export const Element: React.FC = (): React.ReactElement => {
-  type Card = {
-    id: number
-    judul: string
-    text: string
-    icons?: ReactNode
-  }
-  const dataCard: Card[] = [
-    {
-      id: 1,
-      judul: 'Aneka Minuman',
-      text: 'lorem ipsum',
-      icons: <MdOutlineFastfood size="3rem" />,
-    },
-    {
-      id: 2,
-      judul: 'Makanan',
-      text: 'lorem ipsum',
-      icons: <FaBowlFood size="3rem" />,
-    },
-    {
-      id: 3,
-      judul: 'Bungkus',
-      text: 'lorem ipsum',
-      icons: <MdOutlineFoodBank size="3rem" />,
-    },
-    {
-      id: 4,
-      judul: 'Daftar Semua',
-      text: 'lorem ipsum',
-      icons: <BiFoodMenu size="3rem" />,
-    },
-  ]
+  const navigate = useNavigate()
   return (
     <div className={styles.parent}>
       <div className={styles.child}>
         <div className={styles.card}>
           {dataCard.map((items) => (
-            <button key={items.id} className={styles.texs}>
+            <button
+              key={items.id}
+              onClick={() => navigate(`${items.navigate}`)}
+              className={styles.texs}
+            >
               <div className={styles.icons}>{items.icons}</div>
-              {/* <div className={styles.texs}> */}
               <h1>{items.judul}</h1>
               <p>{items.text}</p>
-              {/* </div> */}
             </button>
           ))}
         </div>
@@ -134,47 +104,40 @@ export const KategoriMakanan: React.FC = (): React.ReactElement => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   }
-  type Slide = {
-    id: number
-    img: string
-  }
-  const data: Slide[] = [
-    {
-      id: 1,
-      img: 'https://img.freepik.com/premium-photo/rendang-daging-suwir-spicy-beef-stew-from-padang-indonesia-isolated-wooden-plate-white-table_511235-1924.jpg?w=826',
-    },
-    {
-      id: 2,
-      img: 'https://img.freepik.com/free-photo/crispy-fried-chicken-plate-with-tomato-sauce_1150-20207.jpg?w=826&t=st=1706542617~exp=1706543217~hmac=ac36d3794e0495c0b78be902eb5fd2217c9049347ddec90e91f1a709493dec32',
-    },
-    {
-      id: 3,
-      img: 'https://img.freepik.com/premium-photo/rendang-daging-suwir-spicy-beef-stew-from-padang-indonesia-isolated-wooden-plate-white-table_511235-1924.jpg?w=826',
-    },
-    {
-      id: 4,
-      img: 'https://img.freepik.com/free-photo/crispy-fried-chicken-plate-with-tomato-sauce_1150-20207.jpg?w=826&t=st=1706542617~exp=1706543217~hmac=ac36d3794e0495c0b78be902eb5fd2217c9049347ddec90e91f1a709493dec32',
-    },
-    {
-      id: 5,
-      img: 'https://img.freepik.com/premium-photo/rendang-daging-suwir-spicy-beef-stew-from-padang-indonesia-isolated-wooden-plate-white-table_511235-1924.jpg?w=826',
-    },
-    {
-      id: 6,
-      img: 'https://img.freepik.com/free-photo/crispy-fried-chicken-plate-with-tomato-sauce_1150-20207.jpg?w=826&t=st=1706542617~exp=1706543217~hmac=ac36d3794e0495c0b78be902eb5fd2217c9049347ddec90e91f1a709493dec32',
-    },
-  ]
   return (
     <section>
       <div>
         <SliderComponent
-          dataSlider={data.map((items) => (
-            <div key={items.id} className="p-2 outline-none">
-              <img src={items.img} className="rounded-xl" />
+          dataSlider={dataSlider.map((items) => (
+            <div key={items.id} className="p-2 outline-none ">
+              <img
+                src={items.img}
+                className="rounded-xl border-2 border-slate-400"
+              />
             </div>
           ))}
           customSettings={customSettings}
         />
+      </div>
+    </section>
+  )
+}
+
+export const MenuSpecial: React.FC = (): React.ReactElement => {
+  return (
+    <section>
+      <div className=" flex justify-center flex-wrap">
+        {dataMenuSpecial.map((items, index) => (
+          <div key={index} className="w-[30%] rounded-lg">
+            <div className="rounded-xl bg-slate-100 hover:bg-white shadow-2xl p-4 m-2">
+              <img src={items.img} className="rounded-xl" />
+              <h1 className="text-center font-bold text-2xl py-2">
+                {items.food}
+              </h1>
+              <p className="italic">{items.keterangan}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )

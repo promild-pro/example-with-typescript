@@ -1,7 +1,7 @@
 import React from 'react'
 import LayOut from '../../Component/LayOut'
 import SliderComponent from '../../Component/Slider'
-import { Element, KategoriMakanan } from './element'
+import { Element, KategoriMakanan, MenuSpecial } from './element'
 
 export const Dashboard: React.FC = (): JSX.Element => {
   type Slide = {
@@ -36,9 +36,9 @@ export const Dashboard: React.FC = (): JSX.Element => {
           dataSlider={data.map((items) => (
             <div
               key={items.id}
-              className="h-[70vh]  bg-gradient-to-br from-slate-900 to-zinc-300"
+              className="h-[75vh]  bg-gradient-to-br from-slate-900 to-zinc-300"
             >
-              <div className="flex  justify-center items-center">
+              <div className="flex h-[75vh] justify-center items-center">
                 <div className="w-1/2 text-center">
                   <h1 className="text-5xl font-extrabold">
                     Welcome to example WebFood
@@ -61,6 +61,10 @@ export const Dashboard: React.FC = (): JSX.Element => {
         <section>
           <h1 className="font-bold pl-10 text-3xl">Kategori Makanan</h1>
           <KategoriMakanan />
+        </section>
+        <section>
+          <h1 className=" text-center text-3xl font-bold py-5">Menu Special</h1>
+          <MenuSpecial />
         </section>
       </div>
     </LayOut>
