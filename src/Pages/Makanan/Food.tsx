@@ -7,7 +7,7 @@ import SliderComponent from '../../Component/Slider'
 import { dataSlider } from './data'
 
 export const Food: React.FC = (): React.ReactElement => {
-  const data = useAppSelector((state) => state.food)
+  const data = useAppSelector((state) => state.food.data)
   const [popUp, setPopUp] = useState(false)
   const hanldePopUp = () => {
     setPopUp(!popUp)
@@ -17,7 +17,7 @@ export const Food: React.FC = (): React.ReactElement => {
       <div>
         {popUp ? (
           <div className="fixed pt-32 w-full z-20  h-[100vh]">
-            <NoteMenu closePopUp={hanldePopUp} foodElement />
+            <NoteMenu closePopUp={hanldePopUp} />
           </div>
         ) : null}
         <div
@@ -50,7 +50,7 @@ export const Food: React.FC = (): React.ReactElement => {
           <CardMenu
             onClickPopUp={hanldePopUp}
             heading="Menu makanan"
-            data={data.data}
+            data={data}
           />
         </div>
       </div>

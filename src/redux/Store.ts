@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import Slice from '../Pages/Makanan/Slice'
+import SliceFood from './SliceFood'
+import SliceDrink from './SliceDrink'
 
 // export default configureStore({
 //   reducer: {},
 // })
 export const Store = configureStore({
   reducer: {
-    food: Slice,
+    food: SliceFood,
+    drink: SliceDrink,
   },
 })
 export type RootState = ReturnType<typeof Store.getState>

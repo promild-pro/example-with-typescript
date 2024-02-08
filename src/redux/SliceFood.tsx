@@ -1,29 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+import { DataState } from '../global/global'
 
-// type Data = {
-//   id: number
-//   img: string
-//   judul: string
-//   harga: string
-//   totalPesanan: number
-// }
-// // type State = {
-// //   data: []
-// // }
-// type PropsFood = {
-//   data: []
-// }
-interface Item {
-  id: number
-  img: string
-  judul: string
-  harga: string
-  totalPesanan: number
-}
-interface DataState {
-  data: Item[]
-  selectedData: Item[] | number
-}
 const initialState: DataState = {
   data: [
     {
@@ -96,5 +73,4 @@ const SliceFood = createSlice({
   },
 })
 export const { setSelectedData } = SliceFood.actions
-// export const selectSelectedData = (state: { data: DataState }) => state.data.selectedData;
 export default SliceFood.reducer

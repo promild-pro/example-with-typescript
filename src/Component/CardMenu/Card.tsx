@@ -1,26 +1,17 @@
 import { useAppDispatch, useAppSelector } from '../../redux/hook'
-import { setSelectedData } from '../../Pages/Makanan/Slice'
+import { setSelectedData } from '../../redux/SliceFood'
 import React, { useState } from 'react'
-type PropsFood = {
-  id: number
-  img: string
-  judul: string
-  harga: string
-  totalPesanan: number
-}
-type Props = {
-  heading: string
-  data: PropsFood[]
-  onClickPopUp: () => void
-}
-export const CardMenu: React.FC<Props> = ({
+import { PropsChard } from '../../global/global'
+import { StatePesanan } from '../../global/global'
+
+export const CardMenu: React.FC<PropsChard> = ({
   heading,
   data,
   onClickPopUp,
 }): React.ReactElement => {
-  interface StatePesanan {
-    [key: number]: number
-  }
+  // interface StatePesanan {
+  //   [key: number]: number
+  // }
   const dispatch = useAppDispatch()
   const [jumlahPesanan, setJumlahPesanan] = useState<StatePesanan>(
     data.reduce((acc, items) => {
@@ -48,13 +39,14 @@ export const CardMenu: React.FC<Props> = ({
         .map((item) => ({
           id: item.id,
           judul: item.judul,
+          img: item.img,
           totalPesanan: jumlahPesanan[item.id],
         }))
       dispatch(setSelectedData(selectedData))
     }
   }
   const handlePesan = (id: number) => {
-    onClickPopUp()
+    onClickPopUp() // onClik hanlde pesan
     exportModifiedData(id)
   }
   return (

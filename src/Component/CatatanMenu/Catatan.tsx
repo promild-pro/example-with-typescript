@@ -1,30 +1,28 @@
 import React from 'react'
-import { MdOutlineFastfood, MdOutlineFoodBank } from 'react-icons/md'
-import { FaBowlFood } from 'react-icons/fa6'
+// import { MdOutlineFastfood, MdOutlineFoodBank } from 'react-icons/md'
+// import { FaBowlFood } from 'react-icons/fa6'
 import { useAppSelector } from '../../redux/hook'
 import { useNavigate } from 'react-router-dom'
 
 type Props = {
-  readonly foodElement?: boolean
-  readonly wrapfood?: boolean
-  readonly drinkElement?: boolean
   closePopUp: () => void
 }
 export const NoteMenu: React.FC<Props> = ({
   closePopUp,
-  foodElement,
-  wrapfood,
-  drinkElement,
   // data,
 }): React.ReactElement => {
   const navigate = useNavigate()
   const dataIsSelect = useAppSelector((state) => state.food.selectedData)
-  const foodAmount = Array.isArray(dataIsSelect)
+  const orderAmount = Array.isArray(dataIsSelect)
     ? dataIsSelect[0]?.totalPesanan
     : dataIsSelect ?? 0
-  const foodName = Array.isArray(dataIsSelect)
+  const nameOrder = Array.isArray(dataIsSelect)
     ? dataIsSelect[0]?.judul
     : dataIsSelect ?? 0
+  const imgOrder = Array.isArray(dataIsSelect)
+    ? dataIsSelect[0]?.img
+    : dataIsSelect ?? 0
+
   const handlePesan = () => {
     alert('Pesanan Berhasil')
     navigate('/')
@@ -43,23 +41,27 @@ export const NoteMenu: React.FC<Props> = ({
           <div className="flex items-center justify-around">
             <h1 className="font-bold">Catatan Pesanan Anda</h1>
             <div className="grid">
-              {foodElement && (
-                <div className="flex items-center">
-                  <button className="p-2 m-2 bg-green-400 rounded-lg">
-                    <FaBowlFood size={30} />
-                  </button>
-                  <div className="flex justify-between text-xl w-80">
-                    <h1>{foodName}</h1>
-                    <h1>{foodAmount === 0 ? '' : foodAmount}x</h1>
-                  </div>
+              <div className="flex">
+                <img
+                  src={`${imgOrder}`}
+                  className="w-20 h-20 rounded-lg mr-2"
+                />
+                <div className="flex justify-between text-xl w-80">
+                  <h1>{nameOrder}</h1>
+                  <h1>{orderAmount === 0 ? '' : orderAmount}x</h1>
                 </div>
+              </div>
+              {/* {foodElement && (
               )}
               {wrapfood && (
                 <div className="flex items-center">
                   <button className="p-2 m-2 bg-slate-400 hover:bg-slate-500 rounded-lg">
                     <MdOutlineFoodBank size={20} />
                   </button>
-                  <h1> : {}</h1>
+                  <div className="flex justify-between text-xl w-80">
+                    <h1>{nameOrder}</h1>
+                    <h1>{orderAmount === 0 ? '' : orderAmount}x</h1>
+                  </div>
                 </div>
               )}
               {drinkElement && (
@@ -67,9 +69,12 @@ export const NoteMenu: React.FC<Props> = ({
                   <button className="p-2 m-2 bg-slate-400 hover:bg-slate-500 rounded-lg">
                     <MdOutlineFastfood size={30} />
                   </button>
-                  <h1> : {}</h1>
+                  <div className="flex justify-between text-xl w-80">
+                    <h1>{nameOrder}</h1>
+                    <h1>{orderAmount === 0 ? '' : orderAmount}x</h1>
+                  </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
           <div className="flex justify-center">

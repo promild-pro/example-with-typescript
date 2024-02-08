@@ -2,40 +2,36 @@ import React, { ReactNode } from 'react'
 import { MdOutlineFastfood, MdOutlineFoodBank } from 'react-icons/md'
 import { FaBowlFood } from 'react-icons/fa6'
 import { BiFoodMenu } from 'react-icons/bi'
+import { Card } from '../../global/global'
 
-type Card = {
-  id: number
-  judul: string
-  text: string
-  icons?: ReactNode
-  navigate?: string
-}
 export const dataCard: Card[] = [
   {
     id: 1,
     judul: 'Aneka Minuman',
-    text: 'lorem ipsum',
+    text: 'lihat aneka minuman disini',
     icons: <MdOutlineFastfood size="3rem" />,
     navigate: '/drink',
   },
   {
     id: 2,
     judul: 'Makanan',
-    text: 'lorem ipsum',
+    text: 'lihat aneka makanan disini',
     icons: <FaBowlFood size="3rem" />,
     navigate: '/food',
   },
   {
     id: 3,
     judul: 'Bungkus',
-    text: 'lorem ipsum',
+    text: 'jika anda mau bungkus pesanan klik disini',
     icons: <MdOutlineFoodBank size="3rem" />,
+    navigate: '/wrapMenu',
   },
   {
     id: 4,
     judul: 'Daftar Semua',
-    text: 'lorem ipsum',
+    text: 'jika anda mau melihat semua daftar klik disini',
     icons: <BiFoodMenu size="3rem" />,
+    navigate: '/orderList',
   },
 ]
 

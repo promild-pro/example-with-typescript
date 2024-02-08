@@ -4,49 +4,27 @@ import { FaSquareInstagram, FaHouseFloodWater } from 'react-icons/fa6'
 import { CiFacebook } from 'react-icons/ci'
 import { FaTwitter } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
-// import {  } from "react-icons/fa6";
 
 type props = {
   children: React.ReactElement
 }
 export const LayOut: React.FC<props> = ({ children }): React.ReactElement => {
   const navigate = useNavigate()
-  const handleOnClick = () => {
-    // navigate('')
-  }
   return (
     <div className="h-full">
       <nav className="w-full bg-slate-900 h-16 z-50 fixed flex  items-center justify-end text-yellow-400">
-        {/* <button
-          className="px-4 h-9 rounded-md font-bold hover:bg-slate-500 hover:mb-1 "
-          onClick={handleOnClick}
-        >
-          Home
-        </button> */}
-        {/* <button
-          className="px-4 h-9 rounded-md font-bold hover:bg-slate-500 hover:mb-1 "
-          onClick={handleOnClick}
-        >
-          Login
-        </button> */}
         <button
           className="px-4 h-9 rounded-md font-bold hover:bg-slate-500 hover:mb-1 "
-          onClick={handleOnClick}
+          onClick={() => navigate('/about')}
         >
           About
         </button>
         <button
           className="px-4 h-9 rounded-md font-bold hover:bg-slate-500 hover:mb-1 "
-          onClick={handleOnClick}
+          onClick={() => navigate('/orderList')}
         >
           Product
         </button>
-        {/* <button
-          className="px-4 h-9 rounded-md font-bold hover:bg-slate-500 hover:mb-1 "
-          onClick={handleOnClick}
-        >
-          Profile
-        </button> */}
         <button
           onClick={() => navigate('/')}
           className="p-1 m-4 border-2 rounded-md border-yellow-400 hover:bg-slate-500"

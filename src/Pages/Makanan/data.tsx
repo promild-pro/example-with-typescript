@@ -1,9 +1,4 @@
-// export const dataSlider = [{}]
-type Slide = {
-  id: number
-  img: string
-  description: string
-}
+import { Slide } from '../../global/global'
 export const dataSlider: Slide[] = [
   {
     id: 1,
