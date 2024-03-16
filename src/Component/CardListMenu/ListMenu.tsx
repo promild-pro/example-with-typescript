@@ -91,7 +91,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
     <section>
       <h1 className=" text-3xl text-center pt-5 font-bold ">{headingList}</h1>
       <div className=" my-5 flex justify-center ">
-        <div className="w-[47%] ">
+        <div className="w-1/2">
           <h1 className="text-center text-2xl italic font-bold">
             Menu Makanan
           </h1>
@@ -112,7 +112,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                   <h1 className="text-green-600 text-sm italic">
                     Rp.{items.harga}
                   </h1>
-                  <div className="flex text-sm items-center justify-end bg-slate-300 ">
+                  <div className="flex text-sm  items-center justify-end bg-slate-300 ">
                     <button
                       onClick={() => handleMin(items.id)}
                       className="bg-slate-100 h-4 flex items-center justify-center hover:bg-slate-200 rounded-sm w-6 m-1 "
@@ -158,7 +158,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
             </div>
           ))}
         </div>
-        <div className="w-[47%]">
+        <div className="w-1/2">
           <h1 className="text-center text-2xl italic font-bold">
             Menu Minuman
           </h1>
@@ -179,7 +179,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                   <h1 className="text-green-600 text-sm italic">
                     Rp.{items.harga}
                   </h1>
-                  <div className="flex text-sm items-center justify-end bg-slate-300 ">
+                  <div className="flex text-sm  items-center justify-end bg-slate-300 ">
                     <button
                       onClick={() => handleMinDrink(items.id)}
                       className="bg-slate-100 h-4 flex items-center justify-center hover:bg-slate-200 rounded-sm w-6 m-1 "

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LayOut from '../../Component/LayOut'
 import SliderComponent from '../../Component/Slider'
 import { Element, KategoriMakanan, MenuSpecial } from './element'
+import axios from 'axios'
 
 export const Dashboard: React.FC = (): JSX.Element => {
   type Slide = {
@@ -9,6 +10,35 @@ export const Dashboard: React.FC = (): JSX.Element => {
     img: string
     description: string
   }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         'https://api.rajaongkir.com/starter/province',
+  //         {
+  //           method: 'GET',
+  //           headers: {
+  //             key: '49199a701cf8562fffc5332f06fe5246',
+  //           },
+  //         },
+  //       )
+  //       // console.log(response)
+  //       // setData(result)
+  //       // return result
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok')
+  //       }
+
+  //       const result = await response.json()
+  //       console.log(result)
+  //     } catch (error) {
+  //       return error
+  //     }
+  //   }
+
+  //   fetchData()
+  // }, [])
+
   const data: Slide[] = [
     {
       id: 1,
