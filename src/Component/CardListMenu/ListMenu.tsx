@@ -106,7 +106,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                   className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
                 />
               </div>
-              <div className=" p-2 truncate pt-5">
+              <div className=" p-2  pt-5">
                 <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
                   {items.judul}{' '}
                 </h1>
@@ -143,13 +143,13 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                     <div className="w-full flex justify-between ">
                       <button
                         onClick={() => hanldeWrapfood(items.id)}
-                        className=" bg-green-400 hover:bg-green-500 rounded-lg p-2 px-3"
+                        className=" bg-green-400 hover:bg-green-500 rounded-lg m-1 p-1 md:p-2 px-3"
                       >
                         Pesan Disini
                       </button>
                       <button
                         onClick={() => hanldeWrapfood(items.id)}
-                        className=" bg-blue-400 hover:bg-blue-500 rounded-lg px-3"
+                        className=" bg-blue-400 hover:bg-blue-500 rounded-lg m-1 p-1 md:p-2 px-3"
                       >
                         Bungkus
                       </button>
@@ -175,7 +175,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                   className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
                 />
               </div>
-              <div className=" p-2 truncate pt-5">
+              <div className=" p-2 pt-5">
                 <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
                   {items.judul}{' '}
                 </h1>
@@ -212,13 +212,13 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                     <div className="w-full flex justify-between ">
                       <button
                         onClick={() => hanldeWrapfood(items.id)}
-                        className=" bg-green-400 hover:bg-green-500 rounded-lg p-2 px-3"
+                        className=" bg-green-400 hover:bg-green-500 rounded-lg m-1 p-1 md:p-2 px-3"
                       >
                         Pesan Disini
                       </button>
                       <button
                         onClick={() => hanldeWrapfood(items.id)}
-                        className=" bg-blue-400 hover:bg-blue-500 rounded-lg px-3"
+                        className=" bg-blue-400 hover:bg-blue-500 rounded-lg m-1 p-1 md:p-2 px-3"
                       >
                         Bungkus
                       </button>
