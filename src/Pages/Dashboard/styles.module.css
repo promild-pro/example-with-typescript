@@ -1,8 +1,8 @@
 .parent {
-    @apply flex justify-center h-[90vh] items-center
+    @apply md:flex  justify-center items-center py-10
 }
 .child {
-    @apply flex justify-center items-center w-1/2 
+    @apply flex justify-center items-center  md:w-1/2 
 }
 .card {
     @apply  w-[90%]  grid grid-cols-2 gap-6  
@@ -25,18 +25,18 @@
 .texs >p {
     @apply italic text-start
 }
-
+/* // */
 .children {
-    @apply w-1/2
+    @apply  flex justify-center py-10 md:w-1/2 md:justify-start
 }
 .children >div {
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center md:justify-start
 }
 .chardleft {
-    @apply w-[90%] h-[60vh]
+    @apply w-[90%] md:w-1/2
 }
 .chardleft >img{
-    @apply w-auto h-[50vh] rounded-xl hover:shadow-2xl shadow-black 
+    @apply w-full   rounded-xl hover:shadow-2xl shadow-black 
 }
 .chardleft >h1{
     @apply italic pt-5

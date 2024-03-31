@@ -128,7 +128,7 @@ export const MenuSpecial: React.FC = (): React.ReactElement => {
     <section>
       <div className=" flex justify-center flex-wrap">
         {dataMenuSpecial.map((items, index) => (
-          <div key={index} className="w-[30%] rounded-lg">
+          <div key={index} className="w-[27rem] rounded-lg">
             <div className="rounded-xl bg-slate-100 hover:bg-white shadow-2xl p-4 m-2">
               <img src={items.img} className="rounded-xl" />
               <h1 className="text-center font-bold text-2xl py-2">

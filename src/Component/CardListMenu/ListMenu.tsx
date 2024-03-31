@@ -90,26 +90,28 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
   return (
     <section>
       <h1 className=" text-3xl text-center pt-5 font-bold ">{headingList}</h1>
-      <div className=" my-5 flex justify-center ">
-        <div className="w-1/2">
+      <div className=" my-5 flex flex-wrap justify-center ">
+        <div className="md:w-1/2">
           <h1 className="text-center text-2xl italic font-bold">
             Menu Makanan
           </h1>
           {data.map((items) => (
             <div
               key={items.id}
-              className="flex bg-slate-100 shadow-2xl rounded-xl m-5"
+              className="flex justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
             >
               <div>
                 <img
                   src={items.img}
-                  className=" w-[20rem] h-52 border-2 border-slate-200 rounded-xl m-2 "
+                  className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
                 />
               </div>
-              <div className="w-72 truncate pt-5">
-                <h1 className="text-3xl font-bold truncate">{items.judul} </h1>
-                <div className="flex justify-between py-2 pt-[5.4rem]">
-                  <h1 className="text-green-600 text-sm italic">
+              <div className=" p-2 truncate pt-5">
+                <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
+                  {items.judul}{' '}
+                </h1>
+                <div className="flex justify-between p-2 pt-[3rem]">
+                  <h1 className="text-green-600  text-sm italic">
                     Rp.{items.harga}
                   </h1>
                   <div className="flex text-sm  items-center justify-end bg-slate-300 ">
@@ -158,37 +160,39 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
             </div>
           ))}
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <h1 className="text-center text-2xl italic font-bold">
             Menu Minuman
           </h1>
           {dataDrink.map((items) => (
             <div
               key={items.id}
-              className="flex bg-slate-100 my-5  rounded-xl shadow-2xl"
+              className="flex justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
             >
               <div>
                 <img
                   src={items.img}
-                  className=" w-[20rem] h-52 rounded-xl m-2 border-2 border-slate-200 "
+                  className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
                 />
               </div>
-              <div className="w-72 truncate pt-5">
-                <h1 className="text-3xl font-bold truncate">{items.judul} </h1>
-                <div className="flex justify-between py-2 pt-[5.4rem]">
-                  <h1 className="text-green-600 text-sm italic">
+              <div className=" p-2 truncate pt-5">
+                <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
+                  {items.judul}{' '}
+                </h1>
+                <div className="flex justify-between p-2 pt-[3rem]">
+                  <h1 className="text-green-600  text-sm italic">
                     Rp.{items.harga}
                   </h1>
                   <div className="flex text-sm  items-center justify-end bg-slate-300 ">
                     <button
-                      onClick={() => handleMinDrink(items.id)}
+                      onClick={() => handleMin(items.id)}
                       className="bg-slate-100 h-4 flex items-center justify-center hover:bg-slate-200 rounded-sm w-6 m-1 "
                     >
                       -
                     </button>
-                    <h1>{orderDrink[items.id]}</h1>
+                    <h1>{orderFood[items.id]}</h1>
                     <button
-                      onClick={() => handlePlusDrink(items.id)}
+                      onClick={() => handlePlus(items.id)}
                       className="bg-slate-100 h-4 flex items-center justify-center hover:bg-slate-200 rounded-sm w-6 m-1 "
                     >
                       +
@@ -198,7 +202,7 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                 <div className="">
                   {wrap && (
                     <button
-                      onClick={() => hanldeWrapDrink(items.id)}
+                      onClick={() => hanldeWrapfood(items.id)}
                       className="bg-blue-400 hover:bg-blue-500 w-full p-2 rounded-lg"
                     >
                       Bungkus
@@ -207,13 +211,13 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
                   {order && (
                     <div className="w-full flex justify-between ">
                       <button
-                        onClick={() => hanldeWrapDrink(items.id)}
+                        onClick={() => hanldeWrapfood(items.id)}
                         className=" bg-green-400 hover:bg-green-500 rounded-lg p-2 px-3"
                       >
                         Pesan Disini
                       </button>
                       <button
-                        onClick={() => hanldeWrapDrink(items.id)}
+                        onClick={() => hanldeWrapfood(items.id)}
                         className=" bg-blue-400 hover:bg-blue-500 rounded-lg px-3"
                       >
                         Bungkus
