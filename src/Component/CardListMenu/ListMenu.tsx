@@ -91,26 +91,26 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
     <section>
       <h1 className=" text-3xl text-center pt-5 font-bold ">{headingList}</h1>
       <div className=" my-5 flex flex-wrap justify-center ">
-        <div className="md:w-1/2">
+        <div className=" md:w-1/2">
           <h1 className="text-center text-2xl italic font-bold">
             Menu Makanan
           </h1>
           {data.map((items) => (
             <div
               key={items.id}
-              className="flex justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
+              className="flex flex-wrap md:flex-nowrap md:justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
             >
-              <div>
-                <img
-                  src={items.img}
-                  className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
-                />
-              </div>
+              {/* <div> */}
+              <img
+                src={items.img}
+                className="w-full lg:h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
+              />
+              {/* </div> */}
               <div className=" p-2  pt-5">
                 <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
                   {items.judul}{' '}
                 </h1>
-                <div className="flex justify-between p-2 pt-[3rem]">
+                <div className="flex justify-between p-2 md:pt-[3rem]">
                   <h1 className="text-green-600  text-sm italic">
                     Rp.{items.harga}
                   </h1>
@@ -167,19 +167,19 @@ export const ListMenu: React.FC<PropsCardListMenu> = ({
           {dataDrink.map((items) => (
             <div
               key={items.id}
-              className="flex justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
+              className="flex flex-wrap md:flex-nowrap md:justify-around bg-slate-100 shadow-2xl rounded-xl m-5"
             >
               <div>
                 <img
                   src={items.img}
-                  className="w-56 h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
+                  className="w-full lg:h-48 lg:w-[20rem] truncate border-2 border-slate-200 rounded-xl m-2 "
                 />
               </div>
               <div className=" p-2 pt-5">
                 <h1 className="lg:text-3xl w-52 md:w-48 lg:w-72 p-2 font-bold truncate">
                   {items.judul}{' '}
                 </h1>
-                <div className="flex justify-between p-2 pt-[3rem]">
+                <div className="flex justify-between p-2 md:pt-[3rem]">
                   <h1 className="text-green-600  text-sm italic">
                     Rp.{items.harga}
                   </h1>
