@@ -10,12 +10,12 @@ type Props = {
 
 const defaultSettings = {
   dots: true,
-  speed: 3000,
+  speed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1000,
   dotsClass: 'slick-dots slick-thumb',
   appendDots: (dots: string) => (
     <div

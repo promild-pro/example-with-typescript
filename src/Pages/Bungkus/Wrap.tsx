@@ -29,7 +29,7 @@ export const WrapMenu: React.FC = (): React.ReactElement => {
             </div>
           ) : null}
           <div
-            className={`${food || drink ? 'fixed z-10 bg-black w-full h-[100vh] opacity-50' : ''}`}
+            className={`${food || drink ? 'fixed z-10 bg-black w-full h-[100vh] max-w-[1400px] opacity-50' : ''}`}
           />
           <div>
             <ListMenu

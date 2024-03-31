@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 import SliderComponent from '../../Component/Slider'
 import styles from './styles.module.css'
@@ -83,7 +83,7 @@ const PrevArrow: React.FC<NextArrowProps> = ({
         style={{
           backgroundColor: 'white',
           borderRadius: '100%',
-          top: '42%',
+          top: '40%',
           padding: '6px',
           position: 'absolute',
           left: '20px',
@@ -96,9 +96,32 @@ const PrevArrow: React.FC<NextArrowProps> = ({
   )
 }
 export const KategoriMakanan: React.FC = (): React.ReactElement => {
+  // const isMobile =
+  const [isMobile, setIsMobile] = useState(0)
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 500) {
+        setIsMobile(2) // Ganti nilai 768 dengan nilai yang sesuai dengan definisi Anda untuk perangkat ponsel
+      } else if (window.innerWidth <= 800) {
+        setIsMobile(3)
+      } else {
+        setIsMobile(5)
+      }
+    }
+
+    // Pertama kali saat komponen dipasang
+    handleResize()
+
+    // Menambahkan event listener untuk menangani perubahan ukuran jendela
+    window.addEventListener('resize', handleResize)
+
+    // Membersihkan event listener saat komponen dibongkar
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   const customSettings = {
     dots: false,
-    slidesToShow: 5,
+    slidesToShow: isMobile,
     arrows: true,
     slideToScroll: 1,
     nextArrow: <NextArrow />,
@@ -109,7 +132,7 @@ export const KategoriMakanan: React.FC = (): React.ReactElement => {
       <div>
         <SliderComponent
           dataSlider={dataSlider.map((items) => (
-            <div key={items.id} className="p-2 outline-none ">
+            <div key={items.id} className="p-2 outline-none h-auto">
               <img
                 src={items.img}
                 className="rounded-xl border-2 border-slate-400"

@@ -14,13 +14,13 @@
     @apply w-16 h-16 ml-5 -top-5 flex justify-center items-center bg-slate-400 rounded-xl absolute  z-20 border-2 border-slate-400
 }
 .texs {
-    @apply relative  pl-5 pt-16 h-40 bg-slate-100 hover:bg-slate-300 shadow-2xl  rounded-lg border-2 border-slate-400
+    @apply relative  pl-5 pt-16 p-2 bg-slate-100 hover:bg-slate-300 shadow-2xl  rounded-lg border-2 border-slate-400
 }
 .texs:hover .icons{
     @apply bg-white
 }
 .texs >h1{
-    @apply font-bold text-lg text-start -mt-14
+    @apply font-bold text-lg text-start 
 }
 .texs >p {
     @apply italic text-start
